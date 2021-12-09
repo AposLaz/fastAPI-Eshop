@@ -1,24 +1,23 @@
 # create, retrieve, update, delete items
 
-from re import DEBUG
 from typing import Optional
 from fastapi import APIRouter,status, Depends, Response, HTTPException
 from fastapi.param_functions import Body
 from starlette.status import HTTP_201_CREATED, HTTP_204_NO_CONTENT, HTTP_500_INTERNAL_SERVER_ERROR
 
 # schema
-from schema.v1.items import Create_Items_Schema
-from schema.v1.users import Current_User_Schema
+from app.schema.v1.items import Create_Items_Schema
+from app.schema.v1.users import Current_User_Schema
 
 # db
 from sqlalchemy.orm import Session
-from db.db import get_db
+from app.db.db import get_db
 
 # routines 
-from routers import item_routines
+from app.routers import item_routines
 
 # JWT
-from routers import oauth2
+from app.routers import oauth2
 
 #*********************************
 #    5:38:57 Response Model -> FRO DO NOT RETURN --> ID <-- IN RESPONSE

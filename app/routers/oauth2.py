@@ -9,9 +9,9 @@ from datetime import datetime, timedelta
 from fastapi_jwt_auth import AuthJWT
 
 from sqlalchemy.orm.session import Session
-from db.models import Users_Model
-from db.db import get_db
-from schema.v1.token import Token_Data_Schema
+from app.db.models import Users_Model
+from app.db.db import get_db
+from app.schema.v1.token import Token_Data_Schema
 from fastapi.security import OAuth2PasswordBearer
 from fastapi import Depends, status, HTTPException
 

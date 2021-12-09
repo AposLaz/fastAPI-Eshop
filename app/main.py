@@ -5,13 +5,13 @@ from fastapi_jwt_auth import AuthJWT
 from fastapi_jwt_auth.exceptions import AuthJWTException
 from fastapi.param_functions import Body
 
-from routers import items
-from routers import users
-from routers import auth 
-from routers import votes
+from app.routers import items
+from app.routers import users
+from app.routers import auth 
+from app.routers import votes
 
-from db import models
-from db.db import engine
+from app.db import models
+from app.db.db import engine
 
 from fastapi.middleware.cors import CORSMiddleware
 #------------------------------------------------------------

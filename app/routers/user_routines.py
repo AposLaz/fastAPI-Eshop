@@ -7,8 +7,8 @@ from fastapi.exceptions import HTTPException
 from sqlalchemy.orm import Session
 from starlette import status
 from starlette.status import HTTP_404_NOT_FOUND
-from db.models import Users_Model
-from schema.v1.users import Users_Schema
+from app.db.models import Users_Model
+from app.schema.v1.users import Users_Schema
 
 from .hash_pwd import get_hash_pwd
 

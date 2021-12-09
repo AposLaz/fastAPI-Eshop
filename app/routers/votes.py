@@ -6,16 +6,16 @@ from sqlalchemy.sql.functions import user
 from starlette import status
 from starlette.responses import Response
 
-from schema.v1.users import Current_User_Schema
-from schema.v1.votes import Votes_Schema
+from app.schema.v1.users import Current_User_Schema
+from app.schema.v1.votes import Votes_Schema
 
-from db.db import get_db
-from db.models import Items_Model, Votes_Model
+from app.db.db import get_db
+from app.db.models import Items_Model, Votes_Model
 
 from fastapi_jwt_auth import AuthJWT
-from routers import oauth2
+from app.routers import oauth2
 
-from routers import item_routines
+from app.routers import item_routines
 
 router = APIRouter(
     prefix="/votes",

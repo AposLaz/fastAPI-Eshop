@@ -5,8 +5,8 @@
 from fastapi.exceptions import HTTPException
 from sqlalchemy.sql.functions import func
 from starlette.status import HTTP_403_FORBIDDEN, HTTP_404_NOT_FOUND
-from schema.v1.items import Create_Items_Schema
-from db.models import Items_Model, Votes_Model
+from app.schema.v1.items import Create_Items_Schema
+from app.db.models import Items_Model, Votes_Model
 from sqlalchemy.orm import Session
 
 def get_all_items(db: Session, search):

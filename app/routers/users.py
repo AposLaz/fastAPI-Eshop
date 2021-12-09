@@ -4,18 +4,18 @@ from fastapi.exceptions import HTTPException
 from fastapi.param_functions import Body
 from sqlalchemy.sql.elements import Null
 from starlette import status
-from routers import oauth2
+from app.routers import oauth2
 from fastapi_jwt_auth import AuthJWT
 
 # schema
-from schema.v1.users import Users_Schema, Current_User_Schema, Update_User_Schema
+from app.schema.v1.users import Users_Schema, Current_User_Schema, Update_User_Schema
 
 # db
-from db.db import get_db
+from app.db.db import get_db
 from sqlalchemy.orm import Session
 
 #routines
-from routers import user_routines 
+from app.routers import user_routines 
 
 router = APIRouter(prefix="/users",
                    tags=["users"])

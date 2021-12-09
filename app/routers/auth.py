@@ -9,16 +9,16 @@ from fastapi.routing import APIRouter
 from fastapi_jwt_auth.auth_jwt import AuthJWT
 from sqlalchemy.orm.session import Session
 from starlette.status import HTTP_401_UNAUTHORIZED, HTTP_403_FORBIDDEN, HTTP_404_NOT_FOUND
-from schema.v1.token import Token_Schema
-from routers import user_routines, hash_pwd, oauth2
+from app.schema.v1.token import Token_Schema
+from app.routers import user_routines, hash_pwd, oauth2
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
 import datetime
 
-from db.db import get_db
+from app.db.db import get_db
 
-from configs.config import environment
+from app.configs.config import environment
 
 router = APIRouter(
     tags=["Authentication"]
