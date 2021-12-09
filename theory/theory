@@ -1,0 +1,28 @@
+**************************
+Python virtual Env Basics
+**************************
+
+Use virtual environment for every project in python so on updates do not have compatible problems
+
+for ex.
+
+We have project1 & project2
+
+** version for FastAPI in project1 is v1.0.4 
+** version for FastAPI in project2 is v2.2.5
+
+!!! if we do an update in all system for FastAPI then project1 will have compatible problems.
+
+So we use => <<< ******************* Python virtual Env ********************* >>> 
+
+1) create a virtual environment ===> py -3 -m venv {name}
+2) View -> Command Palette -> Python: Select Interpreter -> .\{name}\Scripts\python.exe
+3) in terminal -> {name}\Scripts\activate.bat 
+4) run -> venv\Scripts\activate.bat -> uvicorn main:app --reload
+
+
+************************
+|       Python         | 
+************************
+
+kwargs = key-value pairs

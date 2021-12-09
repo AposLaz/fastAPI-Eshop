@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS public."items"
+(
+    "id" integer NOT NULL,
+    "name" character varying COLLATE pg_catalog."default" NOT NULL,
+    "type" character varying COLLATE pg_catalog."default" NOT NULL,
+    "description" text COLLATE pg_catalog."default",
+    "tags" text [] COLLATE pg_catalog."default" NOT NULL,
+    "price" numeric NOT NULL,
+    "available" boolean NOT NULL DEFAULT true,
+    "inventory" integer NOT NULL,
+    CONSTRAINT "items_pkey" PRIMARY KEY ("id")
+)

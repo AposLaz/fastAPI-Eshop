@@ -1,0 +1,19 @@
+ ----- Votes/Likes System requirements -------
+
+ * Users should be able to like a post
+ * Should only be able to like a post once
+ * Retrieving posts should also fetch the total number of Likes
+
+_______________________________
+|                             |
+|        TABLE LIKES          |
+|_____________________________|
+
+//composite-keys allow "only one" combination of two rows
+//We have composite-key when there are many primary-keys
+
+* user_id (Foreign Key from users)    // Users that going to like a photo
+* item_id (Foreign key from items)    // Items that he would like
+
+Join//
+* total_likes : int                  

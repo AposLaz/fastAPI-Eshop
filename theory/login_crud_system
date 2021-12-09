@@ -1,0 +1,12 @@
+user:
+    id
+    username
+    password
+    email
+    telephone
+    role
+    
+
+
+ADMIN
+USER
