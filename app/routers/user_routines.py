@@ -3,6 +3,7 @@
 #**************************************************
 
 
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from sqlalchemy.orm import Session
 from starlette import status
@@ -23,8 +24,12 @@ def get_user_by_id(id: int, db: Session):
     raise HTTPException(status_code=HTTP_404_NOT_FOUND,detail={"Error":"User does not exist"})
 
 def get_user_by_username(user_cred, db: Session):
-    user_pwd = db.query(Users_Model).filter(Users_Model.username == user_cred.username).first()
+    user_pwd = db.query(Users_Model).filter(Users_Model.username == user_cred).first()
     return user_pwd
+
+def get_user_by_email(user_cred, db: Session):
+    email = db.query(Users_Model).filter(Users_Model.email == user_cred).first()
+    return email
 
 def create_user(user: Users_Schema, db: Session):
     user.password = get_hash_pwd(user.password)                         # hash password

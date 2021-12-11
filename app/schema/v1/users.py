@@ -16,13 +16,11 @@ class Users_Schema(BaseModel):
     @validator('telephone')
     def valid_phone(cls,v):
         assert str(v).isdecimal() , "This is invalid mobile number"
-        phone = "+30-"+v
-        assert phonenumbers.parse(phone,"GR") , "Invalid number for your region"
-        return phone
+        return v
 
-    class Config:
+
+class Config:
         orm_mode = True
-        
         #here we give an example of schema
         schema_extra = {
             "example":{
@@ -32,6 +30,17 @@ class Users_Schema(BaseModel):
                 "telephone": "6979977872"   
             }
         }
+
+
+class Create_Users_Schema(Users_Schema):
+    
+    password2: str = Field(...,min_length=6)
+
+    @validator('password2')
+    def valid_password(cls,v,values,**kwargs):
+        if 'password' in values and v!= values['password']:
+            raise ValueError("Passwords do not match")
+        return v
 
 #************************************************************************* UPDATE
 
